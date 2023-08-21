@@ -3,3 +3,25 @@ cidade, estado, país), descriçãoProduto, QuantidadeEstoque, QuantidadeVendida
 preçoTotal, preçoUnitário, númeroNota).
 
 1 FN -> atributos multivalorados ou atributos compostos (devem ser atomicos)
+
+    EndereçoVendedor => multivalorado
+    Vendedor (NumVendedor, nomeVendedor, descriçãoProduto, QuantidadeEstoque, QuantidadeVendida,
+    preçoTotal, preçoUnitário, númeroNota).
+
+    EndereçoVendedor(NumVendedor, rua, cep, bairro,
+    cidade, estado, país)
+
+2FN -> 2 FN -> estar 1FN e NAO ter dependencia funcional parcial (
+ter um atributo nao-chave dependendo funcionalmente de parte da chave primaria APENAS)
+-> se nenhum atributo não-chave existe na relação(todos os atributos sao parte de chave primaria)
+-> se todo atributo não-chave é dependente funcionalmente de todo o conjunto de atributos da chave primária
+
+    Vendedor(NumVendedor, nomeVendedor, NumeroNotaFK)
+
+    Produto(CodProduto, preçoUnitário, descriçãoProduto, QuantidadeEstoque)
+
+    venda(NumeroNota, CodProduto, QuantidadeVendida, preçoTotal)
+
+    EndereçoVendedor(NumVendedor, rua, cep, bairro, cidade, estado, país)
+
+3FN -> TA NA 2FN E JA TA 
