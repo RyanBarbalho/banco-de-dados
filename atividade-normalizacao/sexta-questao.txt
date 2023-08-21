@@ -1,0 +1,50 @@
+
+Fatura (numFatura, dataFatura, NumCliente, nomeCliente, endereçoCliente (rua, cep,
+bairro, cidade, estado, país), telefoneCliente)
+
+Detalhes da Fatura (codProduto, descriçãoProduto, precóUnitário, quatidade, total,
+subtotal)
+
+1 FN -> atributos multivalorados ou atributos compostos (devem ser atomicos)
+
+Fatura (numFaturaPK, dataFatura, NumClienteFK, codProdutoFK)
+
+Cliente(NumClientePK,codEndereçoFK, nomeCliente,telefoneCliente)
+
+endereçoCliente (codEndereçoPK,rua, cep, bairro, cidade, estado, país)
+
+Detalhes da Fatura (codProdutoPK, descriçãoProduto, precóUnitário, quatidade, total,
+subtotal)
+
+2FN -> 2 FN -> estar 1FN e NAO ter dependencia funcional parcial (
+ter um atributo nao-chave dependendo funcionalmente de parte da chave primaria APENAS)
+-> se nenhum atributo não-chave existe na relação(todos os atributos sao parte de chave primaria)
+-> se todo atributo não-chave é dependente funcionalmente de todo o conjunto de atributos da chave primária
+
+Fatura (numFaturaPK, dataFatura, NumClienteFK, codProdutoFK)
+
+Cliente(NumClientePK,codEndereçoFK, nomeCliente, telefoneCliente)
+
+endereçoCliente (codEndereçoPK,rua, cep, bairro, cidade, estado, país)
+
+Detalhes da Fatura (codProdutoPK, descriçãoProduto, precóUnitário, quatidade, total,
+subtotal)
+
+3 FN -> estar na 2 FN e não há atributo não chave determinado funcionalmente por outro atributo não chave
+	->dependencia transitiva
+->solução para relações fora da 3 FN.
+- pra cada atributo nao-chave que determina funcionalmente outro atributo crie uma nova tabela
+- atributo não-chave sera a pk desta nova tabela
+- mova os atributos dependentes funcionalmente para a nova tabela
+
+Fatura (numFaturaPK, dataFatura, NumClienteFK, codProdutoFK)
+
+Cliente(NumClientePK,codEndereçoFK, nomeCliente, telefoneCliente)
+
+endereçoCliente (codEndereçoPK,rua, cep, bairro, cidade, estado, país)
+
+produto(codProdutoPK, descriçãoProduto, precóUnitário)
+
+Detalhes da Fatura (numFaturaPK, codProdutoFK, numFatura, quatidade, total,
+subtotal)
+
