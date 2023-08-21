@@ -1,0 +1,37 @@
+Empregado (NúmeroEmpregado, NomedoEmpregado, NúmerodoDepartamento,
+NomedoDepartamento, NúmerodoGerente, NomedoGerente, NúmerodoProjeto,
+NomedoProjeto, DatadeInícioProjeto, NúmeroHorasTrabalhadasnoProjeto, valorhora Projeto).
+
+1 FN -> atributos multivalorados ou atributos compostos (devem ser atomicos)
+	ja esta?
+
+2 FN -> estar 1FN e NAO ter dependencia funcional parcial (
+ter um atributo nao-chave dependendo funcionalmente de parte da chave primaria APENAS)
+-> se nenhum atributo não-chave existe na relação(todos os atributos sao parte de chave primaria)
+-> se todo atributo não-chave é dependente funcionalmente de todo o conjunto de atributos da chave primária
+
+	CHAVE PRIMARIA = numeroEmpregado
+	numero departamento -> nomeDepartamento
+	Numero do gerente -> Nome do gerente, 
+	Numero do projeto -> data inicio projeto,Valor hora projeto
+
+	Empregado (NúmeroEmpregado, NomedoEmpregado, NúmerodoDepartamento,NúmerodoGerente, 	NúmerodoProjeto, NúmeroHorasTrabalhadasnoProjeto).
+	Gerente (NúmeroGerente, nomeGerente, numero projeto)
+	departamento(numeroDepartamento, nomeDepartamento)
+	projeto(numeroProjeto, nomeProjeto, data inicioProjeto, Valor Hora projeto, numerogerente)
+
+3 FN -> estar na 2 FN e não há atributo não chave determinado funcionalmente por outro atributo não chave
+	->dependencia transitiva
+	->solução para relações fora da 3 FN.
+	- pra cada atributo nao-chave que determina funcionalmente outro atributo crie uma nova 	tabela
+	- atributo não-chave sera a pk desta nova tabela
+	- mova os atributos dependentes funcionalmente para a nova tabela
+
+	
+
+
+	
+	
+
+
+

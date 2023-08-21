@@ -1,0 +1,10 @@
+Gestão de Projetos ( NumProjeto, NumEmpregado, NomeProjeto, NomeEmpregado,
+Função, Salário, Horas)
+
+1 FN -> atributos multivalorados ou atributos compostos (devem ser atomicos)
+
+empregado-> pode ter varios entao é não atomico
+
+Gestão de Projetos ( NumProjeto, NumEmpregadofk, NomeProjeto, Horas)
+
+Empregados(NumEmpregado, NumProjetofk, NomeEmpregado, Função, Salário)

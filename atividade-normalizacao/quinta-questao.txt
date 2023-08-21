@@ -1,0 +1,5 @@
+Vendedor (NumVendedor, nomeVendedor, EndereçoVendedor (rua, cep, bairro,
+cidade, estado, país), descriçãoProduto, QuantidadeEstoque, QuantidadeVendida,
+preçoTotal, preçoUnitário, númeroNota).
+
+1 FN -> atributos multivalorados ou atributos compostos (devem ser atomicos)
